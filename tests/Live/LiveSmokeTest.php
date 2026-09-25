@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Facades\Http;
 use NorthBees\CapApi\Cap;
 use NorthBees\CapApi\CapCredentials;
 
@@ -15,7 +16,7 @@ beforeEach(function () {
         $this->markTestSkipped('Set CAP_LIVE=1 with CAP_SUBSCRIBER_ID and CAP_PASSWORD to run live checks.');
     }
 
-    Illuminate\Support\Facades\Http::allowStrayRequests();
+    Http::allowStrayRequests();
 
     $this->cap = app(Cap::class)->withCredentials(new CapCredentials((int) env('CAP_SUBSCRIBER_ID'), (string) env('CAP_PASSWORD')));
 });

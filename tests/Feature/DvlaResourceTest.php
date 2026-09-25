@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
 use NorthBees\CapApi\Cap;
+use NorthBees\CapApi\CapCredentials;
 use NorthBees\CapApi\Enums\CapDatabase;
+use NorthBees\CapApi\Enums\CapService;
 use NorthBees\CapApi\Enums\MatchLevelFlag;
 use NorthBees\CapApi\Exceptions\CapLookupLimitExceededException;
 use NorthBees\CapApi\Exceptions\CapNoMatchException;
@@ -50,7 +52,7 @@ it('looks up a VIN', function () {
 
 it('handles the DVLA payload returned as an escaped string', function () {
     $inner = htmlspecialchars('<RESPONSE><SUCCESS>true</SUCCESS><MATCHLEVEL><CAP>1</CAP></MATCHLEVEL><DATA><CAP><CAPID>42</CAPID></CAP></DATA></RESPONSE>', ENT_XML1);
-    Http::fake(['soap.cap.co.uk/*' => Http::response(CapResponse::envelope(NorthBees\CapApi\Enums\CapService::Dvla, 'DVLALookupVRM', $inner))]);
+    Http::fake(['soap.cap.co.uk/*' => Http::response(CapResponse::envelope(CapService::Dvla, 'DVLALookupVRM', $inner))]);
 
     expect(app(Cap::class)->dvla()->lookupVrm('X')->cap->capId)->toBe(42);
 });
@@ -89,7 +91,7 @@ it('maps alternative derivatives', function () {
 it('uses per-instance credentials', function () {
     Http::fake(['soap.cap.co.uk/*' => Http::response(capFixture('dvla/DVLALookupVRM.xml'))]);
 
-    app(Cap::class)->withCredentials(new NorthBees\CapApi\CapCredentials(777, 'tenant'))->dvla()->lookupVrm('AB12CDE');
+    app(Cap::class)->withCredentials(new CapCredentials(777, 'tenant'))->dvla()->lookupVrm('AB12CDE');
 
     Http::assertSent(fn ($request) => soapParams($request)['SubscriberID'] === '777' && soapParams($request)['Password'] === 'tenant');
 });

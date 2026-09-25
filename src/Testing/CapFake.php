@@ -119,7 +119,7 @@ final class CapFake
         $operation = $document->getElementsByTagNameNS('http://schemas.xmlsoap.org/soap/envelope/', 'Body')->item(0)?->firstElementChild;
         $params = [];
 
-        foreach ($operation?->childNodes ?? [] as $node) {
+        foreach ($operation->childNodes ?? [] as $node) {
             if ($node instanceof DOMElement && strcasecmp($node->localName, 'password') !== 0) {
                 $params[$node->localName] = $node->textContent;
             }

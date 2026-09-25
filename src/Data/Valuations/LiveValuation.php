@@ -37,7 +37,7 @@ final readonly class LiveValuation
 
         $comments = [];
 
-        foreach (($valuationDate ? $result->child('Comments', $valuationDate) : null)?->childNodes ?? [] as $node) {
+        foreach (($valuationDate ? $result->child('Comments', $valuationDate) : null)->childNodes ?? [] as $node) {
             if ($node instanceof DOMElement && trim($node->textContent) !== '') {
                 $comments[] = trim($node->textContent);
             }

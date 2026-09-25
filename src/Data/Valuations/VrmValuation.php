@@ -33,7 +33,7 @@ final readonly class VrmValuation
         $equipment = $result->child('StandardEquipment');
         $items = $equipment ? $result->child('SEData', $equipment) : null;
 
-        foreach ($items?->childNodes ?? [] as $node) {
+        foreach ($items->childNodes ?? [] as $node) {
             if ($node instanceof DOMElement) {
                 $standardEquipment[] = StandardEquipmentItem::fromVrmRow(Row::fromElement($node));
             }

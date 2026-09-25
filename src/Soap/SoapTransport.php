@@ -77,7 +77,8 @@ final class SoapTransport
         $xpath = new DOMXPath($document);
         $xpath->registerNamespace('soap', SoapEnvelope::SOAP_NAMESPACE);
 
-        $fault = $xpath->query('//soap:Body/soap:Fault')?->item(0);
+        $faults = $xpath->query('//soap:Body/soap:Fault');
+        $fault = $faults === false ? null : $faults->item(0);
 
         if ($fault !== null) {
             throw new CapSoapFaultException(
@@ -92,7 +93,8 @@ final class SoapTransport
             throw new CapInvalidResponseException("CAP {$operation} returned HTTP {$response->status()}: ".XmlLoader::snippet($body), $service, $operation);
         }
 
-        $result = $xpath->query("//soap:Body/*[local-name()='{$operation}Response']/*[local-name()='{$operation}Result']")?->item(0);
+        $results = $xpath->query("//soap:Body/*[local-name()='{$operation}Response']/*[local-name()='{$operation}Result']");
+        $result = $results === false ? null : $results->item(0);
 
         if (! $result instanceof \DOMElement) {
             throw new CapInvalidResponseException("CAP {$operation} response had no {$operation}Result element.", $service, $operation);

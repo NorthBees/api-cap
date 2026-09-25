@@ -39,7 +39,7 @@ final readonly class DvlaLookupResult
 
         $alternatives = [];
 
-        foreach (self::childElement($data, 'ALTERNATIVEDERIVATIVES')?->childNodes ?? [] as $node) {
+        foreach (self::childElement($data, 'ALTERNATIVEDERIVATIVES')->childNodes ?? [] as $node) {
             if ($node instanceof DOMElement) {
                 $alternatives[] = AlternativeDerivative::fromRow(Row::fromElement($node));
             }
@@ -64,7 +64,7 @@ final readonly class DvlaLookupResult
 
     private static function childElement(?DOMElement $parent, string $name): ?DOMElement
     {
-        foreach ($parent?->childNodes ?? [] as $node) {
+        foreach ($parent->childNodes ?? [] as $node) {
             if ($node instanceof DOMElement && strcasecmp($node->localName, $name) === 0) {
                 return $node;
             }
