@@ -1,0 +1,76 @@
+{
+    "name": "northbees/cap-api",
+    "description": "A Laravel SDK for the CAP HPI SOAP web services - DVLA lookups, taxonomy, new vehicle data, valuations and images.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Smith",
+            "email": "steven@sd-smith.co.uk",
+            "homepage": "https://github.com/NorthBees/"
+        }
+    ],
+    "homepage": "https://github.com/northbees/cap-api",
+    "keywords": [
+        "laravel",
+        "cap",
+        "cap-hpi",
+        "soap",
+        "vehicles",
+        "valuations",
+        "dvla",
+        "sdk"
+    ],
+    "support": {
+        "issues": "https://github.com/northbees/cap-api/issues",
+        "source": "https://github.com/northbees/cap-api"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.4",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "pestphp/pest": "^4.4.2",
+        "pestphp/pest-plugin-laravel": "^4.1",
+        "laravel/pint": "^1.29",
+        "larastan/larastan": "^3.9.3",
+        "orchestra/testbench": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NorthBees\\CapApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NorthBees\\CapApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "lint": "pint",
+        "analyse": "phpstan analyse"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NorthBees\\CapApi\\CapServiceProvider"
+            ],
+            "aliases": {
+                "Cap": "NorthBees\\CapApi\\Facades\\Cap"
+            }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

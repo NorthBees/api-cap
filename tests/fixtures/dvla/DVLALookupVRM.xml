@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <DVLALookupVRMResponse xmlns="https://soap.cap.co.uk/dvla">
+      <DVLALookupVRMResult>
+        <RESPONSE xmlns="">
+          <SUCCESS>true</SUCCESS>
+          <ERRORMESSAGE>
+          </ERRORMESSAGE>
+          <TIMESTAMP>21/09/2016 19:59:13</TIMESTAMP>
+          <AUDITID>491911132</AUDITID>
+          <LOOKUP_VRM>AB12CDE</LOOKUP_VRM>
+          <LOOKUP_VIN />
+          <MONTHLYLOOKUPLIMITEXCEEDED>False</MONTHLYLOOKUPLIMITEXCEEDED>
+          <AUTOCORRECTED>False</AUTOCORRECTED>
+          <AUTOCORRECTEDREASON>
+          </AUTOCORRECTEDREASON>
+          <MATCHLEVEL>
+            <DVLA>1</DVLA>
+            <DVLAKEEPER>1</DVLAKEEPER>
+            <DVLABASIC>1</DVLABASIC>
+            <SMMT>0</SMMT>
+            <CAP>1</CAP>
+            <ALTERNATIVEVRMS>0</ALTERNATIVEVRMS>
+            <ALTERNATIVEDERIVATIVES>0</ALTERNATIVEDERIVATIVES>
+          </MATCHLEVEL>
+          <DATA>
+            <DVLA>
+              <VRM>AB12CDE</VRM>
+              <VIN>WF0KXXGCBKAA00000</VIN>
+              <MANUFACTURER>FORD</MANUFACTURER>
+              <MODEL>FOCUS ST-3 TURBO</MODEL>
+              <FUELTYPE>PETROL</FUELTYPE>
+              <BODYTYPE>5 DOOR HATCHBACK</BODYTYPE>
+              <DOORS>
+              </DOORS>
+              <SEATING>5</SEATING>
+              <WHEELPLAN>2 AXLE RIGID BODY</WHEELPLAN>
+              <REGISTRATIONDATE>20140901</REGISTRATIONDATE>
+              <MANUFACTUREDDATE>20140901</MANUFACTUREDDATE>
+              <FIRSTREG_DATE>20140901</FIRSTREG_DATE>
+              <FIRSTREG_USEDBEFORE>0</FIRSTREG_USEDBEFORE>
+              <CO2>169</CO2>
+              <ENGINECAPACITY>1999</ENGINECAPACITY>
+              <ENGINENUMBER>AA00000             </ENGINENUMBER>
+              <ISSCRAPPED>No</ISSCRAPPED>
+              <SCRAPPEDDATE>
+              </SCRAPPEDDATE>
+              <ISEXPORTED>No</ISEXPORTED>
+              <EXPORTEDDATE>
+              </EXPORTEDDATE>
+              <ISIMPORTED>No</ISIMPORTED>
+              <IMPORTEDDATE>
+              </IMPORTEDDATE>
+              <COLOUR>BLUE</COLOUR>
+              <MASSINSERVICE>1497</MASSINSERVICE>
+              <MAXMASS>2025</MAXMASS>
+              <MAXNETPOWER>184</MAXNETPOWER>
+              <PREVIOUSKEEPERS>0</PREVIOUSKEEPERS>
+              <CHERISHEDTRANSFERMARKER>No</CHERISHEDTRANSFERMARKER>
+            </DVLA>
+            <CAP>
+              <VEHICLETYPE_ID>1</VEHICLETYPE_ID>
+              <VEHICLETYPE>Car</VEHICLETYPE>
+              <CAPID>56520</CAPID>
+              <CAPCODE>FOFO20T3S5HPTM  4   </CAPCODE>
+              <ENHANCEDCAPCODE>0105652020140505201405050117292260028171</ENHANCEDCAPCODE>
+              <MANUFACTURER_CODE>2514</MANUFACTURER_CODE>
+              <MANUFACTURER>FORD</MANUFACTURER>
+              <RANGE_CODE>256</RANGE_CODE>
+              <RANGE>FOCUS</RANGE>
+              <MODEL_CODE>53847</MODEL_CODE>
+              <MODEL>FOCUS HATCHBACK</MODEL>
+              <MODELDATEDESC_SHORT>(11 - 14)</MODELDATEDESC_SHORT>
+              <MODELDATEDESC_LONG>(2011 - 2014)</MODELDATEDESC_LONG>
+              <DERIVATIVE>2.0T ST-3 5dr</DERIVATIVE>
+              <INTRODUCED>20120528</INTRODUCED>
+              <DISCONTINUED>20140930</DISCONTINUED>
+              <DOORS>5</DOORS>
+              <DRIVETRAIN>Front Wheel Drive</DRIVETRAIN>
+              <FUELDELIVERY>Turbo</FUELDELIVERY>
+              <TRANSMISSION>Manual</TRANSMISSION>
+              <FUELTYPE>Petrol</FUELTYPE>
+              <PLATE>2014 64</PLATE>
+              <PLATE_YEAR>2014</PLATE_YEAR>
+              <PLATE_MONTH>9</PLATE_MONTH>
+            </CAP>
+          </DATA>
+        </RESPONSE>
+      </DVLALookupVRMResult>
+    </DVLALookupVRMResponse>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetTechnicalDataResponse xmlns="https://soap.cap.co.uk/nvd">
+      <GetTechnicalDataResult>
+        <Success>true</Success>
+        <FailMessage />
+        <Returned_DataSet>
+          <xs:schema id="TechnicalData" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+            <xs:element name="TechnicalData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" />
+          </xs:schema>
+          <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+            <TechnicalData xmlns="">
+              <Tech diffgr:id="Tech1" msdata:rowOrder="0">
+                <Tech_TechCode>110</Tech_TechCode>
+                <DT_LongDescription>CO</DT_LongDescription>
+                <Dc_Description>Emissions</Dc_Description>
+                <tech_value_string>0.413</tech_value_string>
+              </Tech>
+              <Tech diffgr:id="Tech2" msdata:rowOrder="1">
+                <Tech_TechCode>67</Tech_TechCode>
+                <DT_LongDescription>CO2 (g/km)</DT_LongDescription>
+                <Dc_Description>Emissions</Dc_Description>
+                <tech_value_string>169</tech_value_string>
+              </Tech>
+              <Tech diffgr:id="Tech3" msdata:rowOrder="2">
+                <Tech_TechCode>133</Tech_TechCode>
+                <DT_LongDescription>Insurance Group 1 - 50 Effective January 07</DT_LongDescription>
+                <Dc_Description>General</Dc_Description>
+                <tech_value_string>30E</tech_value_string>
+              </Tech>
+            </TechnicalData>
+          </diffgr:diffgram>
+        </Returned_DataSet>
+      </GetTechnicalDataResult>
+    </GetTechnicalDataResponse>
+  </soap:Body>
+</soap:Envelope>

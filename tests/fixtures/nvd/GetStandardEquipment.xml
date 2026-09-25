@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetStandardEquipmentResponse xmlns="https://soap.cap.co.uk/nvd">
+      <GetStandardEquipmentResult>
+        <Success>true</Success>
+        <FailMessage />
+        <Returned_DataSet>
+          <xs:schema id="StandardEquipement" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+            <xs:element name="StandardEquipement" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+              <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:element name="SE">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Se_OptionCode" type="xs:int" minOccurs="0" />
+                        <xs:element name="Do_Description" type="xs:string" minOccurs="0" />
+                        <xs:element name="Dc_Description" type="xs:string" minOccurs="0" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:schema>
+          <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+            <StandardEquipement xmlns="">
+              <SE diffgr:id="SE1" msdata:rowOrder="0">
+                <Se_OptionCode>80351</Se_OptionCode>
+                <Do_Description>'Ford Power' starter button</Do_Description>
+                <Dc_Description>Driver Convenience</Dc_Description>
+              </SE>
+              <SE diffgr:id="SE2" msdata:rowOrder="1">
+                <Se_OptionCode>4792</Se_OptionCode>
+                <Do_Description>Digital clock</Do_Description>
+                <Dc_Description>Driver Convenience</Dc_Description>
+              </SE>
+              <SE diffgr:id="SE3" msdata:rowOrder="2">
+                <Se_OptionCode>27149</Se_OptionCode>
+                <Do_Description>'Quickclear' heated windscreen/heated washer jets</Do_Description>
+                <Dc_Description>Exterior Features</Dc_Description>
+              </SE>
+            </StandardEquipement>
+          </diffgr:diffgram>
+        </Returned_DataSet>
+      </GetStandardEquipmentResult>
+    </GetStandardEquipmentResponse>
+  </soap:Body>
+</soap:Envelope>
